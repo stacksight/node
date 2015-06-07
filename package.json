@@ -1,0 +1,53 @@
+{
+  "name": "stacksight",
+  "version": "1.0.5",
+  "description": "stacksight node support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oritpersik/stack-sight.git"
+  },
+  "dependencies": {
+    "request": "latest",
+    "morgan": "latest"
+  },
+  "keywords": [
+    "mean",
+    "meanio"
+  ],
+  "author": {
+    "name": "Stacksight"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stacksight/node/issues"
+  },
+  "homepage": "https://github.com/oritpersik/stack-sight",
+  "gitHead": "17bcf2df49d738326c1bcc4715639b758a857a75",
+  "_id": "stacksight@1.0.5",
+  "_shasum": "0463f85246846c1ab0989ca7a0ac1ebd89a458af",
+  "_from": "stacksight@*",
+  "_npmVersion": "2.1.18",
+  "_nodeVersion": "1.3.0",
+  "_npmUser": {
+    "name": "oritpersik",
+    "email": "orit@linnovate.net"
+  },
+  "dist": {
+    "shasum": "e4a6ec78529e2bebc8ceeea12fa1e80e3c0a7b0b",
+    "tarball": "http://registry.npmjs.org/stack-sight/-/stack-sight-1.0.5.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "oritpersik",
+      "email": "orit@linnovate.net"
+    }
+  ],
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/stack-sight/-/stack-sight-1.0.5.tgz",
+  "readme": "# stack-sight\n",
+  "readmeFilename": "README.md"
+}
