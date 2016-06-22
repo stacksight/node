@@ -26,7 +26,7 @@ StackSight.prototype.index = function(index, data) {
     data.created = new Date();
 
     var mapiOpt = {
-        uri: 'https://dev.stacksight.io/api/v0.1/index/' + index,
+        uri: 'https://api.stacksight.io/v0.1/index/' + index,
         method: 'POST',
         form: data,
         headers: {
