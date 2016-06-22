@@ -34,9 +34,7 @@ StackSight.prototype.index = function(index, data) {
         }
     };
 
-    request(mapiOpt, function(err, res, body) {
-        process.stdout.write(JSON.stringify(mapiOpt,null,2))
-    });
+    request(mapiOpt, function(err, res, body) { });
 
 };
 

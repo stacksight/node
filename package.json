@@ -1,6 +1,6 @@
 {
   "name": "stacksight",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "stacksight node support",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/stacksight/node/issues"
   },
-  "homepage": "https://github.com/oritpersik/stack-sight",
+  "homepage": "https://github.com/stacksight/node",
   "gitHead": "17bcf2df49d738326c1bcc4715639b758a857a75",
   "_id": "stacksight@1.0.5",
   "_shasum": "0463f85246846c1ab0989ca7a0ac1ebd89a458af",
