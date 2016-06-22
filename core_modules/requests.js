@@ -2,20 +2,19 @@
 
 module.exports = function(sts) {
 
-	var options = {
-		skip: function(req, res) {
+  var options = {
+    skip: function(req, res) {
 
-			 var data = {
-                index: 'logs',
+      var data = {
                 type: 'request',
                 method: req.method,
-                url: req.originalUrl,
+                content: req.originalUrl,
                 status: res.statusCode
             };
 
-            sts.index(data);
-		}
-	};
+            sts.index('logs/log', data);
+    }
+  };
 
-  	sts.app.use(require('morgan')('dev', options));
+    sts.app.use(require('morgan')('dev', options));
 };

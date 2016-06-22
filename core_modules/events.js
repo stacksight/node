@@ -1,43 +1,25 @@
 'use strict';
 
-
-
 module.exports = function(StackSight, sts) {
 
-	var EventEmitter = require('events').EventEmitter,
-		stsEvents = new EventEmitter();
+  StackSight.prototype.event = function(data) {
 
+  var data = {
+            action:    data.action                 ,
+            type:      data.type                   , // 'post', 'taxonomy', 'user', 'settings' or 'file'.
+            subtype:   data.subtype                , // 'page' or 'image'.
+            id:        data.id                     ,
+            name:      data.name                   ,
+            desc:      data.desc                   ,
+            url:       data.url                    ,
+            data:      data.data                   ,
+            user:      data.user                   ,
+            icon:      data.icon     || 'fa-bars'  ,
+            icon_col:  data.icon_col || '#176583'
+  };
 
-	function Events() {}
-
-
-	Events.prototype.publish = function(key, name , data) {
-
-	    stsEvents.emit(key + ' ' + name, data);
-
-        var design = data.design || {};
-        design.color = data.design.color || '#176583';
-        design.icon = data.design.icon || 'fa-bars';
-        delete data.design;
-
-		var options = {
-			index: 'events',
-			type: 'events',
-			key: key,
-            name: name,
-            design: design,
-			data: data
-		};
-
-		sts.index(options);
-	   
-	};
-
-	Events.prototype.subscribe = function(name, cb) {
-	    stsEvents.on(name, cb);
-	};
-
-	StackSight.prototype.events = new Events();
-
+  sts.index('events/event', data);
+     
+  };
 };
 

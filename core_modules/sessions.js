@@ -1,6 +1,19 @@
 'use strict';
 
+var os = require('os');
+
 module.exports = function(StackSight, sts) {
+
+    var data = {
+        architecture: '???',
+        hostname: '???',
+        git: {
+            sha: '???',
+            abbreviatedSha: '???'
+        },
+
+
+    }
 
     function Sessions() {
         // this.git = 'http://......',
@@ -8,22 +21,29 @@ module.exports = function(StackSight, sts) {
     };
 
     Sessions.prototype.up = function() {
-        sts.index({
-            index: 'sessions',
-            type: 'sessions',
-            action: 'up'
+        sts.index('sessions/session', {
+            action: 'up',
+            architecture: 'linux',
+            hostname: 'bi.linnovate.net',
+            git: {
+                sha: '???',
+                abbreviatedSha: '???'
+            },
+            platform: StackSight.platform,
+            loadavg: os.loadavg(),
+            freemem: os.freemem(),
+            totalmem: os.totalmem(),
+            cpus: os.cpus()
         });
     };
 
     function exitHandler(options, err) {
-        sts.index({
-            index: 'sessions',
-            type: 'sessions',
+        sts.index('sessions/session', {
             action: 'down',
             err: err
         });
         setTimeout(function() {
-            // console.log('##########################################');
+            console.log('##########################################');
             if (options.cleanup) console.log('clean');
             if (err) console.log(err.stack);
             if (options.exit) process.exit();

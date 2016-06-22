@@ -1,35 +1,32 @@
 'use strict';
 
 
-var os = require('os');
 var request = require('request');
 var stackSight;
-var tried = false;
 
 
 function StackSight(options) {
-    var options = options || {};
-    var allow = options.user && options.appId ? true : false;
-    this.user = options.user || this.user;
-    this.appId = options.appId || this.appId;
-    this.app = options.app || this.app;
-    this.allow = options.allow || allow;
+    
+    this.apiKey = options.apiKey;
+    this.appId = options.appId;
+    this.app = options.app;
+
+    try {
+        require('meanio');
+        this.platform = 'mean';
+    } catch (err) {
+        this.platform = 'nodejs';
+    }
 }
 
-StackSight.prototype.index = function(data) {
+StackSight.prototype.index = function(index, data) {
 
-    if (!this.allow) return;
-
-    data.token = this.user;
-    data.created = new Date();
+    data.token = this.apiKey;
     data.appId = this.appId;
-    data.loadavg = os.loadavg();
-    data.freemem = os.freemem();
-    data.totalmem = os.totalmem();
-    data.cpus = os.cpus();
+    data.created = new Date();
 
     var mapiOpt = {
-        uri: 'https://network.mean.io/api/v0.1/index/' + data.index + '/' + data.type,
+        uri: 'https://dev.stacksight.io/api/v0.1/index/' + index,
         method: 'POST',
         form: data,
         headers: {
@@ -37,10 +34,9 @@ StackSight.prototype.index = function(data) {
         }
     };
 
-    delete mapiOpt.form.index;
-    delete mapiOpt.form.type;
-
-    request(mapiOpt, function(error, response, body) {});
+    request(mapiOpt, function(err, res, body) {
+        process.stdout.write(JSON.stringify(mapiOpt,null,2))
+    });
 
 };
 
@@ -48,10 +44,15 @@ StackSight.prototype.index = function(data) {
 module.exports = function(options) {
 
     if (!stackSight) {
+        
+        if(!options.apiKey) throw 'StackSight Error: apiKey not supplied';
+        if(!options.appId) throw 'StackSight Error: appId not supplied';
+        
         stackSight = new StackSight(options);
-        (require('./core_modules/events')(StackSight, stackSight));
         (require('./core_modules/console')(stackSight));
+        (require('./core_modules/events')(StackSight, stackSight));
         (require('./core_modules/sessions')(StackSight, stackSight));
+        (require('./core_modules/updates')(stackSight));
     
         if (stackSight.app)
             (require('./core_modules/requests')(stackSight));
@@ -59,4 +60,3 @@ module.exports = function(options) {
 
     return stackSight;
 };
-
