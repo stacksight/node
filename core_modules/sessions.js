@@ -12,7 +12,6 @@ module.exports = function(StackSight, sts) {
     Sessions.prototype.up = function() {
         sts.index('sessions/session', {
             action: 'up',
-            platform: StackSight.platform,
             loadavg: os.loadavg(),
             freemem: os.freemem(),
             totalmem: os.totalmem(),
