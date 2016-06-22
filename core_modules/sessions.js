@@ -4,17 +4,6 @@ var os = require('os');
 
 module.exports = function(StackSight, sts) {
 
-    var data = {
-        architecture: '???',
-        hostname: '???',
-        git: {
-            sha: '???',
-            abbreviatedSha: '???'
-        },
-
-
-    }
-
     function Sessions() {
         // this.git = 'http://......',
         // this.
@@ -23,12 +12,6 @@ module.exports = function(StackSight, sts) {
     Sessions.prototype.up = function() {
         sts.index('sessions/session', {
             action: 'up',
-            architecture: 'linux',
-            hostname: 'bi.linnovate.net',
-            git: {
-                sha: '???',
-                abbreviatedSha: '???'
-            },
             platform: StackSight.platform,
             loadavg: os.loadavg(),
             freemem: os.freemem(),
