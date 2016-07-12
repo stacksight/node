@@ -6,8 +6,7 @@ module.exports = function(sts) {
 
   (function update(){
 
-    var main = require.main.filename
-    child.exec('cd ' + main.slice(0, main.lastIndexOf('/')) + ' && npm outdated --json --long', function(err, stdout, stderr) {
+    child.exec('cd ' + process.cwd() + ' && npm outdated --json --long', function(err, stdout, stderr) {
 
       var interval = 24*60*60*1000;
       setTimeout(update, Math.ceil(Date.now()/interval)*interval - Date.now());
