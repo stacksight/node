@@ -31,7 +31,7 @@ module.exports = function(sts) {
           status:          updates[p].wanted == updates[p].current ? 5 : 1                  ,
           description:     info.description                                                 ,
           release_link:    info.homepage                                                    ,
-          download_link:   (info.repository.url || info.homepage).match(/http.*/)[0]
+          download_link:   ((info.repository.url || info.homepage).match(/http.*/) || [])[0]
         });
 
       }
