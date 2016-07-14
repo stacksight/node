@@ -2,6 +2,8 @@
 
 module.exports = function(sts) {
 
+  if (!sts.features.requests) return;
+
   var options = {
     skip: function(req, res) {
 

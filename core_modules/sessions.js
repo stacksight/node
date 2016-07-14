@@ -4,6 +4,8 @@ var os = require('os');
 
 module.exports = function(StackSight, sts) {
 
+    if (!sts.features.sessions) return;
+
     function Sessions() {
         // this.git = 'http://......',
         // this.
@@ -25,7 +27,6 @@ module.exports = function(StackSight, sts) {
             err: err
         });
         setTimeout(function() {
-            console.log('##########################################');
             if (options.cleanup) console.log('clean');
             if (err) console.log(err.stack);
             if (options.exit) process.exit();

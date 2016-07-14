@@ -1,53 +1,118 @@
 {
-  "name": "stacksight", 
-  "version": "1.1.4", 
-  "description": "stacksight node support",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_args": [
+    [
+      "stacksight",
+      "/home/orit/devel/stacksight/api"
+    ]
+  ],
+  "_from": "stacksight@latest",
+  "_id": "stacksight@1.1.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/stacksight",
+  "_nodeVersion": "4.4.7",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/stacksight-1.1.4.tgz_1468336097858_0.5265186550095677"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stacksight/node.git"
+  "_npmUser": {
+    "email": "avraham@linnovate.net",
+    "name": "avraham"
+  },
+  "_npmVersion": "2.15.8",
+  "_phantomChildren": {
+    "aws-sign2": "0.6.0",
+    "aws4": "1.4.1",
+    "bl": "1.1.2",
+    "caseless": "0.11.0",
+    "combined-stream": "1.0.5",
+    "forever-agent": "0.6.1",
+    "form-data": "1.0.0-rc4",
+    "har-validator": "2.0.6",
+    "hawk": "3.1.3",
+    "http-signature": "1.1.1",
+    "is-typedarray": "1.0.0",
+    "isstream": "0.1.2",
+    "json-stringify-safe": "5.0.1",
+    "mime-types": "2.1.11",
+    "node-uuid": "1.4.7",
+    "oauth-sign": "0.8.2",
+    "stringstream": "0.0.5",
+    "tough-cookie": "2.2.2",
+    "tunnel-agent": "0.4.3"
+  },
+  "_requested": {
+    "name": "stacksight",
+    "raw": "stacksight",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/stacksight/-/stacksight-1.1.4.tgz",
+  "_shasum": "7f53b27b9faee29cf9e8043b7542b863cdd95dfc",
+  "_shrinkwrap": null,
+  "_spec": "stacksight",
+  "_where": "/home/orit/devel/stacksight/api",
+  "author": {
+    "name": "Stacksight"
+  },
+  "bugs": {
+    "url": "https://github.com/stacksight/node/issues"
   },
   "dependencies": {
-    "request": "latest",
-    "morgan": "latest"
+    "morgan": "latest",
+    "request": "latest"
   },
+  "description": "stacksight node support",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "7f53b27b9faee29cf9e8043b7542b863cdd95dfc",
+    "tarball": "https://registry.npmjs.org/stacksight/-/stacksight-1.1.4.tgz"
+  },
+  "gitHead": "17bcf2df49d738326c1bcc4715639b758a857a75",
+  "homepage": "https://github.com/stacksight/node",
   "keywords": [
     "mean",
     "meanio"
   ],
-  "author": {
-    "name": "Stacksight"
-  },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/stacksight/node/issues"
-  },
-  "homepage": "https://github.com/stacksight/node",
-  "gitHead": "17bcf2df49d738326c1bcc4715639b758a857a75",
-  "_id": "stacksight@1.0.5",
-  "_shasum": "0463f85246846c1ab0989ca7a0ac1ebd89a458af",
-  "_from": "stacksight@*",
-  "_npmVersion": "2.1.18",
-  "_nodeVersion": "1.3.0",
-  "_npmUser": {
-    "name": "oritpersik",
-    "email": "orit@linnovate.net"
-  },
-  "dist": {
-    "shasum": "e4a6ec78529e2bebc8ceeea12fa1e80e3c0a7b0b",
-    "tarball": "http://registry.npmjs.org/stack-sight/-/stack-sight-1.0.5.tgz"
-  },
+  "main": "index.js",
   "maintainers": [
     {
-      "name": "oritpersik",
-      "email": "orit@linnovate.net"
+      "email": "avraham@linnovate.net",
+      "name": "avraham"
+    },
+    {
+      "email": "wealthybora@gmail.com",
+      "name": "bora-89"
+    },
+    {
+      "email": "igor@linnovate.net",
+      "name": "igor-lemon"
+    },
+    {
+      "email": "orit@linnovate.net",
+      "name": "oritpersik"
+    },
+    {
+      "email": "lior@linnovate.net",
+      "name": "stacksight"
     }
   ],
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/stack-sight/-/stack-sight-1.0.5.tgz",
-  "readme": "# stack-sight\n",
-  "readmeFilename": "README.md"
+  "name": "stacksight",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacksight/node.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.5"
 }

@@ -4,6 +4,8 @@ var child = require('child_process');
 
 module.exports = function(sts) {
 
+  if (!sts.features.updates) return;
+
   (function update(){
 
     child.exec('cd ' + process.cwd() + ' && npm outdated --json --long', function(err, stdout, stderr) {
