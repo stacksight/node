@@ -56,7 +56,7 @@ module.exports = function(options) {
     };
 
     for (var index in features) {
-        options.features[index] = options.features[index] || features[index];
+        options.features[index] = (options.features[index] === false) ? false : (options.features[index] || features[index]);
     };
 
     if (!stackSight) {
