@@ -3,23 +3,27 @@
     [
       "stacksight",
       "/home/orit/devel/stacksight/api"
+    ],
+    [
+      "stacksight@^1.1.5",
+      "/home/orit/devel/stacksight/api"
     ]
   ],
-  "_from": "stacksight@latest",
-  "_id": "stacksight@1.1.4",
+  "_from": "stacksight@>=1.1.5 <2.0.0",
+  "_id": "stacksight@1.1.5",
   "_inCache": true,
   "_installable": true,
   "_location": "/stacksight",
-  "_nodeVersion": "4.4.7",
+  "_nodeVersion": "6.0.0",
   "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/stacksight-1.1.4.tgz_1468336097858_0.5265186550095677"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/stacksight-1.1.5.tgz_1468496798120_0.3420356747228652"
   },
   "_npmUser": {
-    "email": "avraham@linnovate.net",
-    "name": "avraham"
+    "email": "orit@linnovate.net",
+    "name": "oritpersik"
   },
-  "_npmVersion": "2.15.8",
+  "_npmVersion": "3.8.6",
   "_phantomChildren": {
     "aws-sign2": "0.6.0",
     "aws4": "1.4.1",
@@ -43,19 +47,17 @@
   },
   "_requested": {
     "name": "stacksight",
-    "raw": "stacksight",
-    "rawSpec": "",
+    "raw": "stacksight@^1.1.5",
+    "rawSpec": "^1.1.5",
     "scope": null,
-    "spec": "latest",
-    "type": "tag"
+    "spec": ">=1.1.5 <2.0.0",
+    "type": "range"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/stacksight/-/stacksight-1.1.4.tgz",
-  "_shasum": "7f53b27b9faee29cf9e8043b7542b863cdd95dfc",
   "_shrinkwrap": null,
-  "_spec": "stacksight",
+  "_spec": "stacksight@^1.1.5",
   "_where": "/home/orit/devel/stacksight/api",
   "author": {
     "name": "Stacksight"
@@ -71,8 +73,8 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "7f53b27b9faee29cf9e8043b7542b863cdd95dfc",
-    "tarball": "https://registry.npmjs.org/stacksight/-/stacksight-1.1.4.tgz"
+    "shasum": "3eff15bc4ef80506bdbfa3df5a3e0f83aba29252",
+    "tarball": "https://registry.npmjs.org/stacksight/-/stacksight-1.1.5.tgz"
   },
   "gitHead": "17bcf2df49d738326c1bcc4715639b758a857a75",
   "homepage": "https://github.com/stacksight/node",

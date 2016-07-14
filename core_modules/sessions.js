@@ -4,14 +4,14 @@ var os = require('os');
 
 module.exports = function(StackSight, sts) {
 
-    if (!sts.features.sessions) return;
-
     function Sessions() {
         // this.git = 'http://......',
         // this.
     };
 
     Sessions.prototype.up = function() {
+        if (!sts.features.sessions) return;
+
         sts.index('sessions/session', {
             action: 'up',
             loadavg: os.loadavg(),
@@ -22,6 +22,8 @@ module.exports = function(StackSight, sts) {
     };
 
     function exitHandler(options, err) {
+        if (!sts.features.sessions) return;
+
         sts.index('sessions/session', {
             action: 'down',
             err: err
@@ -34,15 +36,15 @@ module.exports = function(StackSight, sts) {
     }
 
     //do something when app is closing
-    process.on('exit', exitHandler.bind(null,{cleanup:true}));
-    process.on('error', exitHandler.bind(null,{cleanup:true}));
+    process.on('exit', exitHandler.bind(null, { cleanup: true }));
+    process.on('error', exitHandler.bind(null, { cleanup: true }));
 
 
     //catches ctrl+c event
-    process.on('SIGINT', exitHandler.bind(null, {exit:true}));
+    process.on('SIGINT', exitHandler.bind(null, { exit: true }));
 
     //catches uncaught exceptions
-    process.on('uncaughtException', exitHandler.bind(null, {exit:true}));
+    process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
 
     StackSight.prototype.sessions = new Sessions();
 };
