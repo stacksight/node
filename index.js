@@ -67,7 +67,9 @@ module.exports = function(options) {
         stackSight = new StackSight(options);
         (require('./core_modules/console')(stackSight));
         (require('./core_modules/events')(StackSight, stackSight));
-        (require('./core_modules/sessions')(StackSight, stackSight));
+
+        if (options.features.sessions)
+            (require('./core_modules/sessions')(StackSight, stackSight));
         if (options.features.updates)
             (require('./core_modules/updates')(stackSight));
 

@@ -10,7 +10,6 @@ module.exports = function(StackSight, sts) {
     };
 
     Sessions.prototype.up = function() {
-        if (!sts.features.sessions) return;
 
         sts.index('sessions/session', {
             action: 'up',
@@ -22,7 +21,6 @@ module.exports = function(StackSight, sts) {
     };
 
     function exitHandler(options, err) {
-        if (!sts.features.sessions) return;
 
         sts.index('sessions/session', {
             action: 'down',
